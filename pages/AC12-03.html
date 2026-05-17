@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC 12.03 — Effets d'un dysfonctionnement — Portfolio Arthur DELAIS</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">A.DELAIS / BUT-GEII</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="AC11-01.html">C1</a></li>
+            <li><a href="AC12-01.html" class="active">C2</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container container-narrow">
+
+    <div class="ac-header">
+        <div class="breadcrumb">
+            <a href="../index.html">Accueil</a>
+            <span class="breadcrumb-sep">/</span>
+            <span>C2 — Vérifier · Niveau 1</span>
+            <span class="breadcrumb-sep">/</span>
+            <span>AC 12.03</span>
+        </div>
+        <div class="ac-code-big">AC 12.03</div>
+        <h1 class="ac-title">Décrire les effets d'un dysfonctionnement</h1>
+        <div class="ac-meta-bar">
+            <span class="badge badge-mf">MF · Maîtrise fragile</span>
+            <span style="color: var(--text-dim); font-family: var(--font-mono); font-size: 0.85rem;">BUT1 · 2025–2026</span>
+        </div>
+    </div>
+    
+
+<section class="content-block">
+    <h3>Description de la compétence</h3>
+    <p>Décrire les effets d'un dysfonctionnement, c'est expliquer en quoi le défaut observé impacte le système : que se passe-t-il en sortie ? Quels signaux sont touchés ? Quelles conséquences en cascade peut-on craindre ? Cette compétence repose sur une compréhension fine de la chaîne fonctionnelle.</p>
+</section>
+
+<section class="content-block">
+    <h3>Mise en œuvre dans mes projets et TP</h3>
+
+    <div class="project-box">
+        <div class="project-box-label">SAÉ Robot · Pont en H</div>
+        <h4>Conséquences d'un transistor défaillant</h4>
+        <p>Dans le cadre de l'analyse du schéma de commande moteur, j'ai pu décrire les effets en cascade qu'aurait la défaillance d'un transistor BC337 (étage de pré-amplification) : la commande PWM ne serait plus transmise au BDX33 correspondant, ce qui empêcherait soit le démarrage du moteur, soit l'inversion de son sens de rotation, selon le côté du pont concerné. La défaillance d'une diode de roue libre 1N4148 exposerait l'étage de commande à une surtension à la coupure de la bobine du relais, ce qui pourrait à terme détruire le transistor.</p>
+    </div>
+
+    <div class="project-box">
+        <div class="project-box-label">TP1 ELEN2 · Saturation</div>
+        <h4>Effets de la saturation d'un AOP</h4>
+        <p>J'ai pu décrire que le signal d'entrée trop grand provoque une saturation visible à l'oscilloscope (écrêtage net du signal de sortie), ce qui rend toute mesure linéaire impossible et fausse complètement la caractéristique de transfert. L'effet visible (signal carré au lieu de triangulaire) traduit physiquement le fait que l'AOP ne peut plus suivre l'évolution de l'entrée.</p>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Preuves associées</h3>
+    <div class="proof-list">
+        <div class="proof-item">Schéma annoté commande moteur SEA Robot</div>
+        <div class="proof-item">Compte-rendu TP1 ELEN2 — observation et explication de la saturation</div>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Auto-évaluation</h3>
+    <p>Je me situe à un niveau de <strong style="color: var(--danger);">maîtrise fragile (MF)</strong>. Je sais décrire les effets d'un dysfonctionnement quand je connais bien le système (mes propres projets, TP guidés), mais je manque encore de pratique sur des systèmes plus complexes. La progression naturelle en BUT2 (sur des SAÉ industrielles) devrait me permettre de consolider cette compétence.</p>
+</section>
+
+<nav class="ac-nav"><a href="AC12-02.html" class="nav-prev">AC 12.02 — Identifier un dysfonctionnement</a><a href="projets.html" class="nav-next">Voir les projets</a></nav>
+</main>
+
+<footer>
+    <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
+</footer>
+
+</body>
+</html>

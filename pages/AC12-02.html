@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC 12.02 — Identifier un dysfonctionnement — Portfolio Arthur DELAIS</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">A.DELAIS / BUT-GEII</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="AC11-01.html">C1</a></li>
+            <li><a href="AC12-01.html" class="active">C2</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container container-narrow">
+
+    <div class="ac-header">
+        <div class="breadcrumb">
+            <a href="../index.html">Accueil</a>
+            <span class="breadcrumb-sep">/</span>
+            <span>C2 — Vérifier · Niveau 1</span>
+            <span class="breadcrumb-sep">/</span>
+            <span>AC 12.02</span>
+        </div>
+        <div class="ac-code-big">AC 12.02</div>
+        <h1 class="ac-title">Identifier un dysfonctionnement</h1>
+        <div class="ac-meta-bar">
+            <span class="badge badge-mf">MF · Maîtrise fragile</span>
+            <span style="color: var(--text-dim); font-family: var(--font-mono); font-size: 0.85rem;">BUT1 · 2025–2026</span>
+        </div>
+    </div>
+    
+
+<section class="content-block">
+    <h3>Description de la compétence</h3>
+    <p>Identifier un dysfonctionnement, c'est repérer qu'un système ne se comporte pas comme attendu : la sortie n'est pas la bonne, le signal est déformé, le programme plante ou la mesure est aberrante. Cette compétence demande à la fois la maîtrise du protocole d'essai et la connaissance du comportement attendu.</p>
+</section>
+
+<section class="content-block">
+    <h3>Mise en œuvre dans mes projets et TP</h3>
+
+    <div class="project-box">
+        <div class="project-box-label">TP1 ELEN2 · TL081</div>
+        <h4>Détection d'un décalage en saturation</h4>
+        <p>En relevant la caractéristique de transfert du trigger non-inverseur, nous avons constaté que la tension de saturation observée ne correspondait pas exactement à ±15 V mais à environ ±14,4 V. J'ai pu identifier l'origine du décalage : l'alimentation symétrique ne fournissait pas exactement ±15 V. De plus, le pont diviseur en entrée (rapport ½) imposait de limiter le signal d'entrée pour éviter de saturer le composant.</p>
+    </div>
+
+    <div class="project-box">
+        <div class="project-box-label">SAÉ Info · Simulateur balistique</div>
+        <h4>Débogage du code C++</h4>
+        <p>Lors du développement, j'ai rencontré plusieurs dysfonctionnements : valeurs nulles ou aberrantes en sortie, erreurs d'arrondi, mauvaise gestion d'angles aux limites (0°, 90°, 180°). J'ai identifié à chaque fois l'origine du problème en faisant des affichages intermédiaires (<code>cout</code>) et en testant cas par cas dans <code>test_balistique.cpp</code>.</p>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Preuves associées</h3>
+    <div class="proof-list">
+        <div class="proof-item">Compte-rendu TP1 ELEN2 — analyse du décalage en saturation (.docx)</div>
+        <div class="proof-item">Fichier de tests C++ (test_balistique.cpp)</div>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Auto-évaluation</h3>
+    <p>Je me situe à un niveau de <strong style="color: var(--danger);">maîtrise fragile (MF)</strong>. J'arrive à identifier des dysfonctionnements simples quand ils sont attendus par l'énoncé du TP, et à déboguer mon propre code en suivant une démarche par bissection. En revanche, devant un système inconnu et complexe, j'ai encore besoin d'être accompagné. C'est typiquement une compétence que je vais consolider en BUT2 lors des SAÉ plus ouvertes.</p>
+</section>
+
+<nav class="ac-nav"><a href="AC12-01.html" class="nav-prev">AC 12.01 — Procédure d'essais</a><a href="AC12-03.html" class="nav-next">AC 12.03 — Effets d'un dysfonctionnement</a></nav>
+</main>
+
+<footer>
+    <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC 12.01 — Procédure d'essais — Portfolio Arthur DELAIS</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">A.DELAIS / BUT-GEII</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="AC11-01.html">C1</a></li>
+            <li><a href="AC12-01.html" class="active">C2</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container container-narrow">
+
+    <div class="ac-header">
+        <div class="breadcrumb">
+            <a href="../index.html">Accueil</a>
+            <span class="breadcrumb-sep">/</span>
+            <span>C2 — Vérifier · Niveau 1</span>
+            <span class="breadcrumb-sep">/</span>
+            <span>AC 12.01</span>
+        </div>
+        <div class="ac-code-big">AC 12.01</div>
+        <h1 class="ac-title">Appliquer une procédure d'essais</h1>
+        <div class="ac-meta-bar">
+            <span class="badge badge-ms">MS · Maîtrise satisfaisante</span>
+            <span style="color: var(--text-dim); font-family: var(--font-mono); font-size: 0.85rem;">BUT1 · 2025–2026</span>
+        </div>
+    </div>
+    
+
+<section class="content-block">
+    <h3>Description de la compétence</h3>
+    <p>Appliquer une procédure d'essais, c'est suivre rigoureusement un protocole de mesure : configurer les instruments (oscilloscope, multimètre, GBF), relever les valeurs, comparer aux résultats attendus, et consigner le tout dans un compte-rendu.</p>
+</section>
+
+<section class="content-block">
+    <h3>Mise en œuvre dans mes TP</h3>
+
+    <div class="project-box">
+        <div class="project-box-label">TP5 ELEN · Transistor et LED</div>
+        <h4>Polarisation de diodes et caractérisation d'un transistor NPN</h4>
+        <p>Avec Thomas Baudrey, nous avons appliqué la procédure complète : mesure des tensions de seuil (0,5 V pour la diode, 2 V pour la LED verte), vérification de l'état passant ou bloqué selon le sens de polarisation, puis caractérisation du transistor bipolaire NPN avec un signal d'entrée triangulaire pour observer V<sub>CE</sub> en fonction de V<sub>E</sub> à l'oscilloscope (CH1 = V<sub>E</sub>, CH2 = V<sub>CE</sub>). Le gain β mesuré était compris entre 100 et 600, ce qui correspond bien à la datasheet.</p>
+    </div>
+
+    <div class="project-box">
+        <div class="project-box-label">TP1 ELEN2 · Amplificateur opérationnel TL081</div>
+        <h4>Détecteur de seuil et trigger non-inverseur</h4>
+        <p>Étude au GBF et à l'oscilloscope d'un détecteur de seuil inverseur, puis d'un trigger non-inverseur. Mesure des caractéristiques de transfert V<sub>2</sub> = f(V<sub>1</sub>), calcul théorique des seuils V<sub>t+</sub> = +V<sub>sat</sub> × (R<sub>1</sub>/R<sub>2</sub>) et V<sub>t−</sub> = −V<sub>sat</sub> × (R<sub>1</sub>/R<sub>2</sub>), puis comparaison avec les valeurs mesurées (≈ ±1,5 V).</p>
+    </div>
+
+    <div class="project-box">
+        <div class="project-box-label">TP ELEN2 (TP3, TP4, TP5, TP6, TP7)</div>
+        <h4>Diagrammes de Bode, filtrage</h4>
+        <p>Plusieurs séances ont porté sur le tracé de diagrammes de Bode à différentes fréquences (1 kHz, 10 kHz et plus), avec un fichier Excel <em>bode.xlsx</em> pour le post-traitement des relevés.</p>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Preuves associées</h3>
+    <div class="proof-list">
+        <div class="proof-item">Compte-rendu TP5 ELEN — transistor et LED (.docx)</div>
+        <div class="proof-item">Compte-rendu TP1 ELEN2 — amplificateur opérationnel TL081 (.docx)</div>
+        <div class="proof-item">Compte-rendus TP3 à TP7 ELEN2 — diagrammes de Bode (.pdf)</div>
+        <div class="proof-item">Tableur Bode avec relevés (bode.xlsx)</div>
+        <div class="proof-item">Comptes-rendus TP physique TP1 et TP3 (.docx)</div>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Auto-évaluation</h3>
+    <p>Je me situe à un niveau de <strong style="color: var(--warning);">maîtrise satisfaisante (MS)</strong>. Je sais utiliser l'oscilloscope numérique, le multimètre et le générateur basse-fréquence, suivre un protocole de TP et rédiger un compte-rendu. Je reste guidé par l'énoncé : je gagnerais à proposer moi-même les procédures dans le futur.</p>
+</section>
+
+<nav class="ac-nav"><a href="AC11-03.html" class="nav-prev">AC 11.03 — Dossier de fabrication</a><a href="AC12-02.html" class="nav-next">AC 12.02 — Identifier un dysfonctionnement</a></nav>
+</main>
+
+<footer>
+    <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
+</footer>
+
+</body>
+</html>

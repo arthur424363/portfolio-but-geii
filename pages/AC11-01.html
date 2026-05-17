@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC 11.01 — Analyse fonctionnelle — Portfolio Arthur DELAIS</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">A.DELAIS / BUT-GEII</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="AC11-01.html" class="active">C1</a></li>
+            <li><a href="AC12-01.html">C2</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container container-narrow">
+
+    <div class="ac-header">
+        <div class="breadcrumb">
+            <a href="../index.html">Accueil</a>
+            <span class="breadcrumb-sep">/</span>
+            <span>C1 — Concevoir · Niveau 1</span>
+            <span class="breadcrumb-sep">/</span>
+            <span>AC 11.01</span>
+        </div>
+        <div class="ac-code-big">AC 11.01</div>
+        <h1 class="ac-title">Produire une analyse fonctionnelle d'un système simple</h1>
+        <div class="ac-meta-bar">
+            <span class="badge badge-ms">MS · Maîtrise satisfaisante</span>
+            <span style="color: var(--text-dim); font-family: var(--font-mono); font-size: 0.85rem;">BUT1 · 2025–2026</span>
+        </div>
+    </div>
+    
+
+<section class="content-block">
+    <h3>Description de la compétence</h3>
+    <p>L'analyse fonctionnelle consiste à décomposer un système en blocs fonctionnels, à identifier le rôle de chaque composant et à comprendre les interactions entre les sous-ensembles. Cette démarche est le point de départ de toute conception en GEII.</p>
+</section>
+
+<section class="content-block">
+    <h3>Mise en œuvre dans mes projets</h3>
+
+    <div class="project-box">
+        <div class="project-box-label">SAÉ — Décembre 2025</div>
+        <h4>SEA Robot · Carte de commande moteur</h4>
+        <p>Pour la SAÉ Robot, j'ai analysé la fonction « commande de deux moteurs à courant continu » à partir du cahier des charges fourni. Cette analyse m'a permis d'identifier les blocs nécessaires : alimentation (batterie 8 V protégée par diode 1N4007), commande logique (signaux PWM et SENS depuis le microcontrôleur), étage de puissance (transistors BC337 en pré-amplification, BDX33 en Darlington pour la commutation forte), inversion du sens de rotation (relais 8 V), et protection (diodes de roue libre 1N4148 sur les bobines).</p>
+        <p style="margin-top: 0.8rem;">J'ai compris pourquoi chaque composant est là : le transistor sert à la fois d'interrupteur commandé et d'élément d'adaptation de courant, le relais permet d'inverser la polarité du moteur sans avoir recours à un pont en H complet en composants discrets, et la diode 1N4148 protège l'étage de commande contre la surtension générée par la bobine du relais à la coupure.</p>
+    </div>
+
+    <div class="project-box">
+        <div class="project-box-label">SAÉ — Janvier 2026</div>
+        <h4>SEA Info · Modélisation balistique</h4>
+        <p>Pour la SAÉ Info (simulateur d'interception balistique), nous avons (Samuel Nouis et moi) commencé par l'analyse du problème : entrées (positions, vitesses, angles initiaux), sortie (angle de tir de l'intercepteur), hypothèses physiques (points matériels, frottements négligés, champ de pesanteur uniforme). Cette analyse a structuré toute la modélisation et le code C++ qui a suivi.</p>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Preuves associées</h3>
+    <div class="proof-image">
+        <img src="../assets/schemas/sea_robot_schema.png" alt="Schéma structurel de la carte commande moteur du SEA Robot">
+        <div class="proof-caption">Schéma structurel · Commande moteur SEA Robot · Proteus · 17/12/2025</div>
+    </div>
+    <div class="proof-list">
+        <div class="proof-item">Schéma Proteus commande moteur (.pdsprj) — voir <a href="projets.html#sea-robot" style="color:var(--accent-bright);">SEA Robot</a></div>
+        <div class="proof-item">Document SAÉ Info "Modélisation physique balistique" (.docx) — voir <a href="projets.html#sae-info" style="color:var(--accent-bright);">SEA Info</a></div>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Auto-évaluation</h3>
+    <p>Je me situe à un niveau de <strong style="color: var(--warning);">maîtrise satisfaisante (MS)</strong> : je sais identifier les blocs fonctionnels d'un système simple, expliquer le rôle de chaque composant et justifier sa présence. Je progresse encore sur la formalisation graphique (diagrammes SADT, FAST) que je n'utilise pas encore systématiquement.</p>
+</section>
+
+<nav class="ac-nav"><span></span><a href="AC11-02.html" class="nav-next">AC 11.02 — Réaliser un prototype</a></nav>
+</main>
+
+<footer>
+    <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
+</footer>
+
+</body>
+</html>

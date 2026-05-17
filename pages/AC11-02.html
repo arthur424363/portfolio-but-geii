@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC 11.02 — Réaliser un prototype — Portfolio Arthur DELAIS</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">A.DELAIS / BUT-GEII</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="AC11-01.html" class="active">C1</a></li>
+            <li><a href="AC12-01.html">C2</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container container-narrow">
+
+    <div class="ac-header">
+        <div class="breadcrumb">
+            <a href="../index.html">Accueil</a>
+            <span class="breadcrumb-sep">/</span>
+            <span>C1 — Concevoir · Niveau 1</span>
+            <span class="breadcrumb-sep">/</span>
+            <span>AC 11.02</span>
+        </div>
+        <div class="ac-code-big">AC 11.02</div>
+        <h1 class="ac-title">Réaliser un prototype pour des solutions matérielles ou logicielles</h1>
+        <div class="ac-meta-bar">
+            <span class="badge badge-ms">MS · Maîtrise satisfaisante</span>
+            <span style="color: var(--text-dim); font-family: var(--font-mono); font-size: 0.85rem;">BUT1 · 2025–2026</span>
+        </div>
+    </div>
+    
+
+<section class="content-block">
+    <h3>Description de la compétence</h3>
+    <p>Réaliser un prototype, c'est passer du schéma à la version qui fonctionne — que ce soit un montage électronique, un programme, ou les deux. Cette compétence est mobilisée dès qu'on traduit une analyse en quelque chose de testable.</p>
+</section>
+
+<section class="content-block">
+    <h3>Mise en œuvre dans mes projets</h3>
+
+    <div class="project-box">
+        <div class="project-box-label">Matériel · SAÉ Robot</div>
+        <h4>Prototype de commande moteur sous Proteus</h4>
+        <p>J'ai réalisé sous Proteus le schéma complet de la carte commande moteur, en plaçant chaque composant (BC337, BDX33, 1N4007, 1N4148, relais 8 V, résistances de base, connecteurs) et en câblant les signaux de commande (PWM1, PWM2, SENS_MOTEUR_1, SENS_MOTEUR_2). La simulation a permis de valider le principe avant d'envisager un prototypage matériel.</p>
+    </div>
+
+    <div class="project-box">
+        <div class="project-box-label">Logiciel · SAÉ Robot</div>
+        <h4>Prototype Arduino bouton + LED</h4>
+        <p>J'ai écrit et testé sous Arduino un programme de pilotage d'une LED par bouton poussoir : déclaration de constantes <code>broche_bp</code> et <code>broche_led</code>, configuration des broches dans <code>setup()</code>, lecture du bouton par <code>digitalRead()</code> et action sur la LED par <code>digitalWrite()</code> dans <code>loop()</code>. Un compteur d'appuis a été ajouté avec retour sur la liaison série à 9600 bauds.</p>
+    </div>
+
+    <div class="project-box">
+        <div class="project-box-label">Logiciel · SAÉ Info (solo)</div>
+        <h4>Prototype C++ du simulateur balistique</h4>
+        <p>J'ai développé seul l'ensemble du code C++ (sous Code::Blocks) du simulateur d'interception : architecture modulaire avec <code>main.cpp</code>, <code>balistique.cpp/h</code>, <code>utilitaires.cpp/h</code>, et un fichier de tests <code>test_balistique.cpp</code>. Le programme demande à l'utilisateur les paramètres des deux projectiles, résout une équation du second degré et affiche l'angle de tir de l'intercepteur.</p>
+    </div>
+
+    <div class="project-box">
+        <div class="project-box-label">Matériel · TP Automatisme</div>
+        <h4>Décodeur 7 segments sous Quartus (FPGA)</h4>
+        <p>En TP d'automatisme, j'ai conçu sous Quartus un décodeur 7 segments à l'aide de blocs <code>.bdf</code> (schémas) en réalisant chacun des sept segments (seg_a à seg_g) comme une fonction logique combinatoire indépendante.</p>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Preuves associées</h3>
+    <div class="proof-image">
+        <img src="../assets/schemas/arduino_bouton_led.png" alt="Schéma de câblage Arduino bouton-LED">
+        <div class="proof-caption">Schéma de câblage Arduino · Bouton poussoir et LED · SAÉ Robot</div>
+    </div>
+    <div class="proof-image">
+        <img src="../assets/code/arduino_code1.png" alt="Code Arduino du prototype bouton-LED">
+        <div class="proof-caption">Programme Arduino · led_piloter_bouton.ino</div>
+    </div>
+    <div class="proof-list">
+        <div class="proof-item">Code C++ simulateur balistique (main.cpp, balistique.cpp/h, utilitaires.cpp/h)</div>
+        <div class="proof-item">Schémas Quartus du décodeur 7 segments (TP4.bdf, seg_a..seg_g.bdf)</div>
+        <div class="proof-item">Schéma Proteus commande moteur (.pdsprj) — décembre 2025</div>
+    </div>
+</section>
+
+<section class="content-block">
+    <h3>Auto-évaluation</h3>
+    <p>Je me situe à un niveau de <strong style="color: var(--warning);">maîtrise satisfaisante (MS)</strong>. Je sais réaliser des prototypes logiciels (C++, Arduino) qui fonctionnent, et des schémas électroniques sous Proteus. Je dois encore progresser sur le prototypage matériel réel (soudure, mise en boîtier), que je n'ai pas pratiqué de façon approfondie cette année.</p>
+</section>
+
+<nav class="ac-nav"><a href="AC11-01.html" class="nav-prev">AC 11.01 — Analyse fonctionnelle</a><a href="AC11-03.html" class="nav-next">AC 11.03 — Dossier de fabrication</a></nav>
+</main>
+
+<footer>
+    <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets et SAÉ — Portfolio Arthur DELAIS</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">A.DELAIS / BUT-GEII</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="projets.html" class="active">Projets</a></li>
+            <li><a href="AC11-01.html">C1</a></li>
+            <li><a href="AC12-01.html">C2</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container container-narrow">
+
+<section class="hero" style="padding: 4rem 0 2.5rem;">
+    <span class="hero-tag">Projets · SAÉ · TP</span>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem);">Projets et travaux pratiques</h1>
+    <p>Cette page rassemble les deux Situations d'Apprentissage et d'Évaluation (SAÉ) marquantes de la première année, ainsi qu'un aperçu des principaux travaux pratiques.</p>
+</section>
+
+<section class="content-block" id="sea-robot">
+    <h2 style="margin-bottom: 1rem;">SAÉ Robot — Commande moteur</h2>
+    <p style="color: var(--text-secondary);"><em>Décembre 2025 · Réalisation solo</em></p>
+
+    <h4>Contexte</h4>
+    <p>La SAÉ Robot consistait à concevoir la carte électronique de commande de deux moteurs à courant continu pour un robot mobile. La carte devait permettre de faire tourner chaque moteur dans les deux sens, avec une variation de vitesse par modulation de largeur d'impulsion (PWM).</p>
+
+    <h4>Solution retenue</h4>
+    <p>Pour chaque moteur, j'ai choisi une commande à base de transistors discrets avec un relais d'inversion de sens : un BC337 commande la base d'un BDX33 (transistor de puissance Darlington) qui pilote la charge, un autre BC337 commande la bobine d'un relais 8 V qui inverse la polarité de la tension appliquée au moteur. Les signaux PWM et SENS proviennent d'un microcontrôleur (Arduino côté commande).</p>
+
+    <div class="proof-image">
+        <img src="../assets/schemas/sea_robot_schema.png" alt="Schéma structurel SEA Robot">
+        <div class="proof-caption">Schéma structurel · Arthur Delais / Étienne Fasola · 17/12/2025 · 12:21</div>
+    </div>
+
+    <h4>Ce que j'ai appris</h4>
+    <ul>
+        <li>Le rôle du transistor en commutation : il fonctionne en interrupteur commandé, et permet aussi d'adapter le courant entre un signal logique faible (PWM) et un récepteur de puissance (moteur ou bobine de relais).</li>
+        <li>L'utilité de la diode de roue libre 1N4148 pour protéger l'étage de commande contre la surtension inductive lors de la coupure d'une bobine.</li>
+        <li>L'intérêt de la simulation sous Proteus avant tout passage à la fabrication.</li>
+    </ul>
+
+    <h4>Compétences mobilisées</h4>
+    <ul>
+        <li><strong>AC 11.01</strong> — Analyse fonctionnelle de la carte commande moteur.</li>
+        <li><strong>AC 11.02</strong> — Réalisation du prototype sous Proteus + programmation Arduino bouton/LED associée.</li>
+        <li><strong>AC 11.03</strong> — Schéma documenté avec cartouche.</li>
+        <li><strong>AC 12.03</strong> — Analyse en cascade des effets d'une défaillance.</li>
+    </ul>
+</section>
+
+<section class="content-block" id="sae-info" style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border);">
+    <h2 style="margin-bottom: 1rem;">SAÉ Info — Simulateur balistique</h2>
+    <p style="color: var(--text-secondary);"><em>Janvier — Mars 2026 · Physique en binôme avec Samuel Nouis, code en solo</em></p>
+
+    <h4>Contexte</h4>
+    <p>L'objectif de la SAÉ Info était de développer un programme C++ permettant de simuler l'interception d'un projectile par un autre. Le projet comportait deux phases : une modélisation physique du problème (en binôme avec Samuel Nouis), puis l'implémentation logicielle (que j'ai réalisée seul).</p>
+
+    <h4>Modélisation physique</h4>
+    <p>Hypothèses simplificatrices : projectiles modélisés comme des points matériels, soumis uniquement à la pesanteur (g = 9,8 m·s<sup>−2</sup>), mouvement plan, frottements négligés. La cible évolue dans un plan vertical (x, z), l'intercepteur dans un plan vertical perpendiculaire (y', z'). La condition d'interception (positions et instants identiques) conduit à une équation du second degré en tan(α<sub>i</sub>), qui peut être résolue analytiquement.</p>
+
+    <h4>Implémentation C++</h4>
+    <p>Architecture modulaire (Code::Blocks) :</p>
+    <ul>
+        <li><code>main.cpp</code> — saisie utilisateur, orchestration générale</li>
+        <li><code>balistique.cpp</code> / <code>.h</code> — calculs physiques (trajectoires, résolution de l'équation, vérification d'interception)</li>
+        <li><code>utilitaires.cpp</code> / <code>.h</code> — fonctions utilitaires (conversion degrés/radians, etc.)</li>
+        <li><code>test_balistique.cpp</code> — tests unitaires sur cas particuliers</li>
+        <li><code>README</code> — documentation, compilation, exemples</li>
+    </ul>
+
+    <h4>Compétences mobilisées</h4>
+    <ul>
+        <li><strong>AC 11.01</strong> — Analyse du problème, identification entrées/sorties/hypothèses.</li>
+        <li><strong>AC 11.02</strong> — Implémentation C++ modulaire.</li>
+        <li><strong>AC 11.03</strong> — README et document de modélisation physique.</li>
+        <li><strong>AC 12.02</strong> — Débogage du code, identification des cas limites.</li>
+    </ul>
+</section>
+
+<section class="content-block" style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border);">
+    <h2 style="margin-bottom: 1rem;">Travaux pratiques</h2>
+
+    <div class="projects-grid" style="margin-top: 1.5rem;">
+
+        <div class="project-card">
+            <div class="comp-code">ELEN</div>
+            <h3>Électronique analogique</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem;">TP5 transistor et LED (polarisation, caractérisation NPN, signal triangle). Binôme Baudrey/Delais.</p>
+            <div class="project-tag-list">
+                <span class="tag">Oscilloscope</span><span class="tag">Transistor NPN</span><span class="tag">Diode</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="comp-code">ELEN 2</div>
+            <h3>Amplificateurs opérationnels</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem;">TP1 à TP7 : TL081, détecteur de seuil, trigger non-inverseur, diagrammes de Bode, filtrage. Binôme Baudrey/Delais.</p>
+            <div class="project-tag-list">
+                <span class="tag">AOP</span><span class="tag">Bode</span><span class="tag">Trigger</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="comp-code">AUTO</div>
+            <h3>Automatisme et FPGA</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem;">Quartus : décodeur 7 segments (seg_a à seg_g), compteur, conception combinatoire.</p>
+            <div class="project-tag-list">
+                <span class="tag">Quartus</span><span class="tag">FPGA</span><span class="tag">Combinatoire</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="comp-code">INFO</div>
+            <h3>Programmation C++</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem;">Mini-projets console (sprint, tableau, 2.7). Code::Blocks. Acquisition des bases du langage avant la SAÉ Info.</p>
+            <div class="project-tag-list">
+                <span class="tag">C++</span><span class="tag">Code::Blocks</span><span class="tag">Algorithmique</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="comp-code">PHYSIQUE</div>
+            <h3>TP physique</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem;">TP1 et TP3. Binôme Baudrey/Delais.</p>
+            <div class="project-tag-list">
+                <span class="tag">Mesure</span><span class="tag">Compte-rendu</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="comp-code">ÉNERGIE</div>
+            <h3>Schémas électrotechniques</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem;">Saisie de schémas électrotechniques (.sch).</p>
+            <div class="project-tag-list">
+                <span class="tag">Schéma</span><span class="tag">Énergie</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
+</footer>
+
+</body>
+</html>
