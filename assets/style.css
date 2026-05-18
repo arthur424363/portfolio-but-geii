@@ -495,6 +495,115 @@ footer a { color: var(--accent-bright); text-decoration: none; }
     object-fit: cover;
 }
 
+/* GALERIE PHOTOS — TP Énergie, etc. */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.photo-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: zoom-in;
+}
+
+.photo-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: var(--accent-dim);
+    box-shadow: 0 16px 40px -10px var(--accent-glow-strong);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.05);
+}
+
+.photo-caption {
+    padding: 0.9rem 1.1rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg-secondary);
+}
+
+.photo-caption-title {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--accent-bright);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.02em;
+}
+
+.photo-caption-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Lightbox — affichage plein écran au clic */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 8, 16, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    cursor: zoom-out;
+}
+
+.lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--accent-dim);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--bg-card);
+    color: var(--accent-bright);
+    border: 1px solid var(--accent-dim);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-mono);
+}
+
+.lightbox-close:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+    transform: rotate(90deg);
+}
+
 /* RESPONSIVE */
 @media (max-width: 720px) {
     .nav-inner { flex-direction: column; align-items: flex-start; padding: 1rem; }

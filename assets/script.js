@@ -194,6 +194,45 @@
             }
         }
 
+        // Connexions de la souris aux étoiles proches autour
+        // Trace des lignes brillantes entre le curseur et les étoiles dans un rayon donné.
+        function drawMouseConnections() {
+            if (!mouse.active) return;
+            const MOUSE_REACH = 220;  // rayon d'attraction visuelle
+            for (let i = 0; i < stars.length; i++) {
+                const s = stars[i];
+                // On vise surtout les étoiles "visibles" (depth > 0.35)
+                if (s.depth < 0.35) continue;
+                const dx = s.x - mouse.x;
+                const dy = s.y - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < MOUSE_REACH) {
+                    const t = 1 - dist / MOUSE_REACH;  // proche = 1, loin = 0
+                    // Opacité plus marquée pour les étoiles proches en profondeur ET proches du curseur
+                    const opacity = t * (0.4 + s.depth * 0.5);
+                    // Dégradé du blanc (à la souris) vers le cyan (à l'étoile)
+                    const grad = ctx.createLinearGradient(mouse.x, mouse.y, s.x, s.y);
+                    grad.addColorStop(0, `rgba(255, 255, 255, ${opacity})`);
+                    grad.addColorStop(1, `rgba(0, 212, 255, ${opacity * 0.6})`);
+                    ctx.strokeStyle = grad;
+                    ctx.lineWidth = 0.4 + t * 0.9;  // ligne plus épaisse quand proche
+                    ctx.beginPath();
+                    ctx.moveTo(mouse.x, mouse.y);
+                    ctx.lineTo(s.x, s.y);
+                    ctx.stroke();
+                }
+            }
+
+            // Halo discret autour du curseur lui-même
+            const cursorGrad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 40);
+            cursorGrad.addColorStop(0, 'rgba(0, 212, 255, 0.35)');
+            cursorGrad.addColorStop(1, 'rgba(0, 212, 255, 0)');
+            ctx.fillStyle = cursorGrad;
+            ctx.beginPath();
+            ctx.arc(mouse.x, mouse.y, 40, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
         let frameCount = 0;
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -201,6 +240,7 @@
             // Étoiles
             stars.forEach(s => { s.update(); s.draw(); });
             drawConnections();
+            drawMouseConnections();
 
             // Étoiles filantes : ~1 toutes les 4-8 secondes
             if (Math.random() < 0.003 && shootingStars.length < 2) {
@@ -297,5 +337,43 @@
             card.style.setProperty('--mouse-y', `${y}%`);
         });
     });
+
+    // ============================================
+    // 7. LIGHTBOX (clic sur photo = plein écran)
+    // ============================================
+    const photoCards = document.querySelectorAll('.photo-card img');
+    if (photoCards.length > 0) {
+        // Création du conteneur lightbox une seule fois
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = '<button class="lightbox-close" aria-label="Fermer">×</button><img alt="" />';
+        document.body.appendChild(lightbox);
+
+        const lbImg = lightbox.querySelector('img');
+        const lbClose = lightbox.querySelector('.lightbox-close');
+
+        function openLightbox(src, alt) {
+            lbImg.src = src;
+            lbImg.alt = alt || '';
+            lightbox.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            lightbox.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+
+        photoCards.forEach(img => {
+            img.addEventListener('click', () => openLightbox(img.src, img.alt));
+        });
+
+        lbClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+        });
+    }
 
 })();
