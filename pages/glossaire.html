@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossaire technique — Arthur Delais</title>
+    <meta name="description" content="Portfolio BUT GEII d'Arthur Delais, 1ère année 2025-2026 à l'IUT Jean Monnet de Saint-Étienne. Compétences, projets, SAÉ et TP.">
+    <meta name="author" content="Arthur Delais">
+    <meta property="og:title" content="Glossaire technique — Arthur Delais">
+    <meta property="og:description" content="Portfolio BUT GEII d'Arthur Delais — IUT Jean Monnet Saint-Étienne">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div id="preloader"><div class="preloader-logo">[ A.D. ]</div></div>
+<canvas id="particles-canvas"></canvas>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">A.DELAIS / BUT-GEII</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="AC11-01.html">C1</a></li>
+            <li><a href="AC12-01.html">C2</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="stage.html">Stage</a></li>
+            <li><a href="glossaire.html" class="active">Glossaire</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container container-narrow">
+
+<section class="hero" style="padding: 3rem 0 2rem;">
+    <span class="hero-tag">Glossaire technique</span>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.2rem);">Glossaire</h1>
+    <p>Petit lexique des termes et composants évoqués dans ce portfolio, pour rendre la lecture accessible même sans formation GEII.</p>
+</section>
+
+<section class="content-block reveal">
+    <h3>⚡ Composants électroniques</h3>
+    <div class="glossary-grid">
+        <div class="glossary-card">
+            <div class="glossary-term">Transistor BC337</div>
+            <div class="glossary-def">Transistor bipolaire NPN de signal, courant collecteur max 800 mA. Utilisé en pré-amplification pour piloter un transistor de puissance.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Transistor BDX33</div>
+            <div class="glossary-def">Transistor Darlington NPN de puissance, courant collecteur max 10 A. Permet de commander des charges fortes (moteurs, ampoules) à partir d'un signal logique.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">TL081</div>
+            <div class="glossary-def">Amplificateur opérationnel à entrées JFET. Très utilisé en TP pour l'étude des montages amplificateurs, comparateurs et triggers.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Diode 1N4007</div>
+            <div class="glossary-def">Diode de redressement courante (1 A, 1000 V). Utilisée pour protéger un circuit contre une inversion d'alimentation.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Diode 1N4148</div>
+            <div class="glossary-def">Diode de signal rapide. Utilisée en diode de roue libre pour protéger un transistor lors de la coupure d'une bobine inductive.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Relais</div>
+            <div class="glossary-def">Interrupteur commandé électriquement par une bobine. Permet d'isoler la partie commande de la partie puissance, et d'inverser des polarités.</div>
+        </div>
+    </div>
+</section>
+
+<section class="content-block reveal">
+    <h3>🔌 Concepts d'électronique</h3>
+    <div class="glossary-grid">
+        <div class="glossary-card">
+            <div class="glossary-term">PWM (Pulse Width Modulation)</div>
+            <div class="glossary-def">Modulation de largeur d'impulsion : signal carré dont on fait varier le rapport cyclique. Permet de moduler la puissance fournie à une charge (ex : vitesse d'un moteur).</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Pont en H</div>
+            <div class="glossary-def">Montage à 4 interrupteurs commandés permettant d'inverser le sens du courant dans un moteur, donc son sens de rotation. Le SAÉ Robot utilise une variante simplifiée (relais d'inversion + transistor de commande).</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Diagramme de Bode</div>
+            <div class="glossary-def">Représentation graphique du gain et de la phase d'un filtre en fonction de la fréquence (en échelle logarithmique). Outil fondamental pour caractériser un filtre.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Trigger (de Schmitt)</div>
+            <div class="glossary-def">Comparateur à hystérésis : sa sortie bascule avec deux seuils différents selon le sens de variation de l'entrée. Très utilisé pour fiabiliser des signaux bruités.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Saturation</div>
+            <div class="glossary-def">État dans lequel un amplificateur ne peut plus suivre son entrée (sortie bloquée à ±V<sub>sat</sub>). Visible à l'oscilloscope par un écrêtage du signal.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Gain β (transistor)</div>
+            <div class="glossary-def">Rapport entre courant collecteur et courant base d'un transistor bipolaire (I<sub>C</sub> / I<sub>B</sub>). Typiquement entre 100 et 600 pour un BC337.</div>
+        </div>
+    </div>
+</section>
+
+<section class="content-block reveal">
+    <h3>💻 Outils et logiciels</h3>
+    <div class="glossary-grid">
+        <div class="glossary-card">
+            <div class="glossary-term">Proteus</div>
+            <div class="glossary-def">Logiciel de CAO électronique permettant la saisie de schémas et la simulation analogique/numérique. Très utilisé en BUT GEII.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Quartus</div>
+            <div class="glossary-def">Logiciel d'Intel/Altera pour la conception de circuits logiques sur FPGA (Field-Programmable Gate Array). Permet la saisie graphique (.bdf) ou VHDL.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Arduino</div>
+            <div class="glossary-def">Plateforme de prototypage basée sur des microcontrôleurs (ATmega). Programmation en langage C/C++ via l'IDE Arduino.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Code::Blocks</div>
+            <div class="glossary-def">Environnement de développement intégré (IDE) gratuit pour la programmation en C/C++ avec le compilateur GCC (g++).</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">FPGA</div>
+            <div class="glossary-def">Circuit logique reconfigurable : on programme sa structure interne pour réaliser une fonction logique sur mesure (compteur, décodeur, etc.).</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">GBF</div>
+            <div class="glossary-def">Générateur Basse Fréquence : instrument de TP qui produit des signaux périodiques (sinus, carré, triangle) à fréquence et amplitude réglables.</div>
+        </div>
+    </div>
+</section>
+
+<section class="content-block reveal">
+    <h3>🎓 Vocabulaire BUT GEII</h3>
+    <div class="glossary-grid">
+        <div class="glossary-card">
+            <div class="glossary-term">SAÉ</div>
+            <div class="glossary-def">Situation d'Apprentissage et d'Évaluation : projet long permettant de mobiliser et d'évaluer plusieurs compétences à la fois.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">AC</div>
+            <div class="glossary-def">Apprentissage Critique : élément concret et observable d'une compétence du référentiel (ex : "Produire une analyse fonctionnelle").</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">NU / MF / MS / TBM</div>
+            <div class="glossary-def">Niveaux d'auto-évaluation : Non Utilisée, Maîtrise Fragile, Maîtrise Satisfaisante, Très Bonne Maîtrise.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Parcours ESE</div>
+            <div class="glossary-def">Électronique et Systèmes Embarqués : un des parcours du BUT GEII, axé sur la conception électronique et l'embarqué.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Parcours AII</div>
+            <div class="glossary-def">Automatisme et Informatique Industrielle : un des parcours du BUT GEII, axé sur l'automatisation et le pilotage de procédés.</div>
+        </div>
+        <div class="glossary-card">
+            <div class="glossary-term">Portfolio</div>
+            <div class="glossary-def">Recueil de preuves et de réflexions sur les compétences acquises. C'est le document que vous êtes en train de consulter.</div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
+</footer>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>

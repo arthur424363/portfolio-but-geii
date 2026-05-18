@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AC 11.01 — Analyse fonctionnelle — Portfolio Arthur DELAIS</title>
+    <title>AC 11.01 — Analyse fonctionnelle</title>
+    <meta name="description" content="Portfolio BUT GEII d'Arthur Delais, 1ère année 2025-2026 à l'IUT Jean Monnet de Saint-Étienne. Compétences, projets, SAÉ et TP.">
+    <meta name="author" content="Arthur Delais">
+    <meta property="og:title" content="AC 11.01 — Analyse fonctionnelle">
+    <meta property="og:description" content="Portfolio BUT GEII d'Arthur Delais — IUT Jean Monnet Saint-Étienne">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
+
+<div id="preloader"><div class="preloader-logo">[ A.D. ]</div></div>
+<canvas id="particles-canvas"></canvas>
 
 <nav class="nav">
     <div class="nav-inner">
@@ -16,6 +25,9 @@
             <li><a href="projets.html">Projets</a></li>
             <li><a href="AC11-01.html" class="active">C1</a></li>
             <li><a href="AC12-01.html">C2</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="stage.html">Stage</a></li>
+            <li><a href="glossaire.html">Glossaire</a></li>
             <li><a href="apropos.html">À propos</a></li>
         </ul>
     </div>
@@ -40,12 +52,12 @@
     </div>
     
 
-<section class="content-block">
+<section class="content-block reveal">
     <h3>Description de la compétence</h3>
     <p>L'analyse fonctionnelle consiste à décomposer un système en blocs fonctionnels, à identifier le rôle de chaque composant et à comprendre les interactions entre les sous-ensembles. Cette démarche est le point de départ de toute conception en GEII.</p>
 </section>
 
-<section class="content-block">
+<section class="content-block reveal">
     <h3>Mise en œuvre dans mes projets</h3>
 
     <div class="project-box">
@@ -62,19 +74,19 @@
     </div>
 </section>
 
-<section class="content-block">
+<section class="content-block reveal">
     <h3>Preuves associées</h3>
     <div class="proof-image">
         <img src="../assets/schemas/sea_robot_schema.png" alt="Schéma structurel de la carte commande moteur du SEA Robot">
         <div class="proof-caption">Schéma structurel · Commande moteur SEA Robot · Proteus · 17/12/2025</div>
     </div>
     <div class="proof-list">
-        <div class="proof-item">Schéma Proteus commande moteur (.pdsprj) — voir <a href="projets.html#sea-robot" style="color:var(--accent-bright);">SEA Robot</a></div>
-        <div class="proof-item">Document SAÉ Info "Modélisation physique balistique" (.docx) — voir <a href="projets.html#sae-info" style="color:var(--accent-bright);">SEA Info</a></div>
+        <div class="proof-item">Schéma Proteus commande moteur (.pdsprj)</div>
+        <div class="proof-item">Document SAÉ Info "Modélisation physique balistique" (.docx)</div>
     </div>
 </section>
 
-<section class="content-block">
+<section class="content-block reveal">
     <h3>Auto-évaluation</h3>
     <p>Je me situe à un niveau de <strong style="color: var(--warning);">maîtrise satisfaisante (MS)</strong> : je sais identifier les blocs fonctionnels d'un système simple, expliquer le rôle de chaque composant et justifier sa présence. Je progresse encore sur la formalisation graphique (diagrammes SADT, FAST) que je n'utilise pas encore systématiquement.</p>
 </section>
@@ -86,5 +98,6 @@
     <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
 </footer>
 
+<script src="../assets/script.js"></script>
 </body>
 </html>

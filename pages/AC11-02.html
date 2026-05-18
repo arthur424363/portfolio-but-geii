@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AC 11.02 — Réaliser un prototype — Portfolio Arthur DELAIS</title>
+    <title>AC 11.02 — Réaliser un prototype</title>
+    <meta name="description" content="Portfolio BUT GEII d'Arthur Delais, 1ère année 2025-2026 à l'IUT Jean Monnet de Saint-Étienne. Compétences, projets, SAÉ et TP.">
+    <meta name="author" content="Arthur Delais">
+    <meta property="og:title" content="AC 11.02 — Réaliser un prototype">
+    <meta property="og:description" content="Portfolio BUT GEII d'Arthur Delais — IUT Jean Monnet Saint-Étienne">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
+
+<div id="preloader"><div class="preloader-logo">[ A.D. ]</div></div>
+<canvas id="particles-canvas"></canvas>
 
 <nav class="nav">
     <div class="nav-inner">
@@ -16,6 +25,9 @@
             <li><a href="projets.html">Projets</a></li>
             <li><a href="AC11-01.html" class="active">C1</a></li>
             <li><a href="AC12-01.html">C2</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="stage.html">Stage</a></li>
+            <li><a href="glossaire.html">Glossaire</a></li>
             <li><a href="apropos.html">À propos</a></li>
         </ul>
     </div>
@@ -40,12 +52,12 @@
     </div>
     
 
-<section class="content-block">
+<section class="content-block reveal">
     <h3>Description de la compétence</h3>
     <p>Réaliser un prototype, c'est passer du schéma à la version qui fonctionne — que ce soit un montage électronique, un programme, ou les deux. Cette compétence est mobilisée dès qu'on traduit une analyse en quelque chose de testable.</p>
 </section>
 
-<section class="content-block">
+<section class="content-block reveal">
     <h3>Mise en œuvre dans mes projets</h3>
 
     <div class="project-box">
@@ -73,7 +85,7 @@
     </div>
 </section>
 
-<section class="content-block">
+<section class="content-block reveal">
     <h3>Preuves associées</h3>
     <div class="proof-image">
         <img src="../assets/schemas/arduino_bouton_led.png" alt="Schéma de câblage Arduino bouton-LED">
@@ -90,7 +102,7 @@
     </div>
 </section>
 
-<section class="content-block">
+<section class="content-block reveal">
     <h3>Auto-évaluation</h3>
     <p>Je me situe à un niveau de <strong style="color: var(--warning);">maîtrise satisfaisante (MS)</strong>. Je sais réaliser des prototypes logiciels (C++, Arduino) qui fonctionnent, et des schémas électroniques sous Proteus. Je dois encore progresser sur le prototypage matériel réel (soudure, mise en boîtier), que je n'ai pas pratiqué de façon approfondie cette année.</p>
 </section>
@@ -102,5 +114,6 @@
     <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
 </footer>
 
+<script src="../assets/script.js"></script>
 </body>
 </html>

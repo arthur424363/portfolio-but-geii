@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BUT GEII — Arthur DELAIS</title>
+    <meta name="description" content="Portfolio BUT GEII d'Arthur Delais, 1ère année 2025-2026 à l'IUT Jean Monnet de Saint-Étienne. Compétences, projets, SAÉ et TP.">
+    <meta name="author" content="Arthur Delais">
+    <meta property="og:title" content="Portfolio BUT GEII — Arthur DELAIS">
+    <meta property="og:description" content="Portfolio BUT GEII d'Arthur Delais — IUT Jean Monnet Saint-Étienne">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
+<div id="preloader"><div class="preloader-logo">[ A.D. ]</div></div>
+<canvas id="particles-canvas"></canvas>
 
 <nav class="nav">
     <div class="nav-inner">
         <a href="index.html" class="nav-brand">A.DELAIS / BUT-GEII</a>
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="index.html">Accueil</a></li>
             <li><a href="pages/projets.html">Projets</a></li>
             <li><a href="pages/AC11-01.html">C1</a></li>
             <li><a href="pages/AC12-01.html">C2</a></li>
+            <li><a href="pages/cv.html">CV</a></li>
+            <li><a href="pages/stage.html">Stage</a></li>
+            <li><a href="pages/glossaire.html">Glossaire</a></li>
             <li><a href="pages/apropos.html">À propos</a></li>
         </ul>
     </div>
@@ -25,8 +37,8 @@
 
     <section class="hero">
         <span class="hero-tag">Portfolio · 2025–2026</span>
-        <h1>Arthur DELAIS</h1>
-        <p>Étudiant en 1<sup>ère</sup> année de BUT Génie Électrique et Informatique Industrielle à l'IUT Jean Monnet de Saint-Étienne. Passionné d'électronique, d'électricité et d'informatique. Sportif de haut niveau en golf.</p>
+        <h1 data-typewriter="Arthur DELAIS"></h1>
+        <p>Étudiant de 20 ans en 1<sup>ère</sup> année de BUT Génie Électrique et Informatique Industrielle à l'IUT Jean Monnet de Saint-Étienne. Passionné d'électronique, d'électricité et d'informatique. Sportif de haut niveau en golf, classé au mérite amateur national et européen.</p>
 
         <div class="hero-meta">
             <div class="meta-item">
@@ -48,13 +60,110 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section reveal">
         <div class="section-header">
-            <div class="section-tag">// 01 — Compétences</div>
+            <h2>Une première année dense</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number"><span data-counter="6">0</span></div>
+                <div class="stat-label">AC évaluées</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span data-counter="2">0</span></div>
+                <div class="stat-label">SAÉ majeures</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span data-counter="15" data-suffix="+">0</span></div>
+                <div class="stat-label">TP réalisés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span data-counter="4">0</span></div>
+                <div class="stat-label">Langages / outils</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reveal">
+        <div class="section-header">
+            <h2>Radar des compétences</h2>
+        </div>
+        <div class="radar-wrapper">
+            <div class="radar-svg-container">
+                <!-- Radar SVG (6 axes) -->
+                <svg width="320" height="320" viewBox="-180 -180 360 360" xmlns="http://www.w3.org/2000/svg" aria-label="Radar des compétences">
+                    <!-- Grilles concentriques -->
+                    <g stroke="#2a3654" stroke-width="1" fill="none" opacity="0.7">
+                        <polygon points="0,-130 112.6,-65 112.6,65 0,130 -112.6,65 -112.6,-65" />
+                        <polygon points="0,-97.5 84.4,-48.7 84.4,48.7 0,97.5 -84.4,48.7 -84.4,-48.7" />
+                        <polygon points="0,-65 56.3,-32.5 56.3,32.5 0,65 -56.3,32.5 -56.3,-32.5" />
+                        <polygon points="0,-32.5 28.1,-16.2 28.1,16.2 0,32.5 -28.1,16.2 -28.1,-16.2" />
+                    </g>
+                    <!-- Axes -->
+                    <g stroke="#2a3654" stroke-width="1" opacity="0.6">
+                        <line x1="0" y1="0" x2="0" y2="-130" />
+                        <line x1="0" y1="0" x2="112.6" y2="-65" />
+                        <line x1="0" y1="0" x2="112.6" y2="65" />
+                        <line x1="0" y1="0" x2="0" y2="130" />
+                        <line x1="0" y1="0" x2="-112.6" y2="65" />
+                        <line x1="0" y1="0" x2="-112.6" y2="-65" />
+                    </g>
+                    <!-- Données (niveaux : MS=2, MS=2, MF=1, MS=2, MF=1, MF=1 / max 3) -->
+                    <!-- 6 AC : AC11.01 MS, AC11.02 MS, AC11.03 MF, AC12.01 MS, AC12.02 MF, AC12.03 MF -->
+                    <!-- MS = 2/3 = 0.67 → 87px ; MF = 1/3 = 0.33 → 43px -->
+                    <polygon
+                        points="0,-86.7 75.1,-43.4 37.5,21.6 0,43.3 -37.5,21.6 -75.1,-43.4"
+                        fill="#00d4ff" fill-opacity="0.18"
+                        stroke="#00d4ff" stroke-width="2"
+                        style="filter: drop-shadow(0 0 6px rgba(0,212,255,0.4));"
+                    />
+                    <!-- Points -->
+                    <g fill="#4dd9ff">
+                        <circle cx="0" cy="-86.7" r="4" />
+                        <circle cx="75.1" cy="-43.4" r="4" />
+                        <circle cx="37.5" cy="21.6" r="4" />
+                        <circle cx="0" cy="43.3" r="4" />
+                        <circle cx="-37.5" cy="21.6" r="4" />
+                        <circle cx="-75.1" cy="-43.4" r="4" />
+                    </g>
+                    <!-- Labels -->
+                    <g font-family="'JetBrains Mono', monospace" font-size="11" fill="#8a96b0" text-anchor="middle">
+                        <text x="0" y="-145">AC11.01</text>
+                        <text x="135" y="-78">AC11.02</text>
+                        <text x="135" y="80">AC11.03</text>
+                        <text x="0" y="150">AC12.01</text>
+                        <text x="-135" y="80">AC12.02</text>
+                        <text x="-135" y="-78">AC12.03</text>
+                    </g>
+                    <!-- Légende des niveaux -->
+                    <g font-family="'JetBrains Mono', monospace" font-size="9" fill="#5b6680">
+                        <text x="6" y="-30">MF</text>
+                        <text x="6" y="-62">MS</text>
+                        <text x="6" y="-95">TBM</text>
+                    </g>
+                </svg>
+            </div>
+            <div class="radar-info">
+                <h3>Niveaux atteints en BUT1</h3>
+                <ul>
+                    <li><span>AC11.01 — Analyse fonctionnelle</span> <span class="niv">MS</span></li>
+                    <li><span>AC11.02 — Prototype</span> <span class="niv">MS</span></li>
+                    <li><span>AC11.03 — Dossier de fab.</span> <span class="niv">MF</span></li>
+                    <li><span>AC12.01 — Procédure d'essais</span> <span class="niv">MS</span></li>
+                    <li><span>AC12.02 — Identifier dysfonct.</span> <span class="niv">MF</span></li>
+                    <li><span>AC12.03 — Décrire effets</span> <span class="niv">MF</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reveal">
+        <div class="section-header">
+            
             <h2>Les compétences du BUT GEII</h2>
         </div>
         <p style="color: var(--text-secondary); max-width: 720px; margin-bottom: 1rem;">
-            Le référentiel du BUT GEII s'organise autour de quatre compétences. Cette première année est centrée sur le <strong>Niveau 1</strong> des compétences C1 (Concevoir) et C2 (Vérifier). Chaque carte renvoie vers le détail des apprentissages critiques (AC) associés, avec preuves à l'appui.
+            Le référentiel du BUT GEII s'organise autour de quatre compétences. Cette première année est centrée sur le <strong>Niveau 1</strong> des compétences C1 (Concevoir) et C2 (Vérifier). Chaque carte renvoie vers le détail des apprentissages critiques.
         </p>
 
         <div class="legend">
@@ -109,13 +218,13 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section reveal">
         <div class="section-header">
-            <div class="section-tag">// 02 — Projets</div>
+            
             <h2>Projets et SAÉ marquants</h2>
         </div>
         <p style="color: var(--text-secondary); max-width: 720px;">
-            Deux Situations d'Apprentissage et d'Évaluation ont structuré cette première année : une plateforme matérielle (SAÉ Robot) et une simulation logicielle (SAÉ Info).
+            Deux SAÉ ont structuré cette première année : une plateforme matérielle (SAÉ Robot) et une simulation logicielle (SAÉ Info).
         </p>
 
         <div class="projects-grid" style="margin-top: 2rem;">
@@ -123,33 +232,27 @@
             <a href="pages/projets.html#sea-robot" class="competence-card">
                 <div class="comp-code">SAÉ · Décembre 2025</div>
                 <div class="comp-title">SEA Robot — Commande moteur</div>
-                <p class="comp-desc">Conception d'une carte de commande de deux moteurs à courant continu : pont en H avec relais, transistors BC337 / BDX33, pilotage par signaux PWM et SENS. Simulation et tests sous Proteus.</p>
+                <p class="comp-desc">Carte de commande de deux moteurs CC : pont en H avec relais, BC337 / BDX33, pilotage PWM/SENS. Simulation Proteus.</p>
                 <div class="project-tag-list">
-                    <span class="tag">Proteus</span>
-                    <span class="tag">Pont en H</span>
-                    <span class="tag">Transistors</span>
-                    <span class="tag">Arduino</span>
+                    <span class="tag">Proteus</span><span class="tag">Pont en H</span><span class="tag">Transistors</span><span class="tag">Arduino</span>
                 </div>
             </a>
 
             <a href="pages/projets.html#sae-info" class="competence-card">
-                <div class="comp-code">SAÉ · Janvier — Mars 2026</div>
+                <div class="comp-code">SAÉ · Jan — Mars 2026</div>
                 <div class="comp-title">SEA Info — Simulateur balistique</div>
-                <p class="comp-desc">Développement d'un programme C++ simulant l'interception de deux projectiles soumis à la gravité. Modélisation physique en binôme, implémentation logicielle en solo. Architecture modulaire avec README et tests.</p>
+                <p class="comp-desc">Programme C++ d'interception balistique. Modélisation physique en binôme, code en solo. Architecture modulaire.</p>
                 <div class="project-tag-list">
-                    <span class="tag">C++</span>
-                    <span class="tag">Physique</span>
-                    <span class="tag">Code::Blocks</span>
-                    <span class="tag">Modélisation</span>
+                    <span class="tag">C++</span><span class="tag">Physique</span><span class="tag">Code::Blocks</span><span class="tag">Modélisation</span>
                 </div>
             </a>
 
         </div>
     </section>
 
-    <section class="section">
+    <section class="section reveal">
         <div class="section-header">
-            <div class="section-tag">// 03 — Synthèse</div>
+            
             <h2>Bilan de l'année</h2>
         </div>
         <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem;">
@@ -168,8 +271,8 @@
 
 <footer>
     <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
-    <p style="margin-top: 0.5rem;">Hébergé sur <a href="https://github.com/arthur424363">GitHub Pages</a></p>
 </footer>
 
+<script src="assets/script.js"></script>
 </body>
 </html>
