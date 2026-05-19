@@ -36,19 +36,19 @@
 
 <section class="hero" style="padding: 4rem 0 2.5rem;">
     <span class="hero-tag">Projets · SAÉ · TP</span>
-    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem);">Projets et travaux pratiques</h1>
-    <p>Cette page rassemble les deux SAÉ marquantes de la première année, ainsi qu'un aperçu des principaux travaux pratiques.</p>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem);">Mes projets</h1>
+    <p>Voici ce sur quoi j'ai vraiment passé du temps cette année : les deux SAÉ qui m'ont le plus marqué, et un tour rapide des TP que j'ai faits.</p>
 </section>
 
 <section class="content-block reveal" id="sea-robot">
     <h2 style="margin-bottom: 1rem;">SAÉ Robot — Commande moteur</h2>
     <p style="color: var(--text-secondary);"><em>Décembre 2025 · Réalisation solo</em></p>
 
-    <h4>Contexte</h4>
-    <p>La SAÉ Robot consistait à concevoir la carte électronique de commande de deux moteurs à courant continu pour un robot mobile. La carte devait permettre de faire tourner chaque moteur dans les deux sens, avec une variation de vitesse par modulation de largeur d'impulsion (PWM).</p>
+    <h4>Le contexte</h4>
+    <p>L'idée, c'était de concevoir la carte qui pilote les deux moteurs CC d'un petit robot mobile. Chaque moteur devait pouvoir tourner dans les deux sens, avec une vitesse réglable (par PWM).</p>
 
-    <h4>Solution retenue</h4>
-    <p>Pour chaque moteur, j'ai choisi une commande à base de transistors discrets avec un relais d'inversion de sens : un BC337 commande la base d'un BDX33 (transistor de puissance Darlington) qui pilote la charge, un autre BC337 commande la bobine d'un relais 8 V qui inverse la polarité de la tension appliquée au moteur.</p>
+    <h4>Ce que j'ai choisi de faire</h4>
+    <p>J'ai opté pour une solution à base de transistors discrets et de relais d'inversion : un BC337 attaque la base d'un BDX33 (transistor de puissance Darlington) qui pilote le moteur, et un autre BC337 commande la bobine d'un relais 8 V qui inverse la polarité du moteur pour changer son sens de rotation.</p>
 
     <div class="proof-image">
         <img src="../assets/schemas/sea_robot_schema.png" alt="Schéma structurel SEA Robot">
@@ -57,17 +57,17 @@
 
     <h4>Ce que j'ai appris</h4>
     <ul>
-        <li>Le rôle du transistor en commutation : il fonctionne en interrupteur commandé, et permet aussi d'adapter le courant entre un signal logique faible (PWM) et un récepteur de puissance.</li>
-        <li>L'utilité de la diode de roue libre 1N4148 pour protéger l'étage de commande contre la surtension inductive.</li>
-        <li>L'intérêt de la simulation sous Proteus avant tout passage à la fabrication.</li>
+        <li>Le rôle du transistor en commutation : il sert d'interrupteur commandé, et il fait aussi le lien entre un signal logique faible (PWM) et une charge qui tire plus de courant.</li>
+        <li>Pourquoi on met une diode de roue libre (1N4148) : sans elle, la bobine du relais peut envoyer une surtension à la coupure et flinguer le transistor.</li>
+        <li>Que tester sous Proteus avant de souder, c'est gagner beaucoup de temps.</li>
     </ul>
 
-    <h4>Compétences mobilisées</h4>
+    <h4>Les compétences que ça a mis en jeu</h4>
     <ul>
-        <li><strong>AC 11.01</strong> — Analyse fonctionnelle de la carte commande moteur.</li>
-        <li><strong>AC 11.02</strong> — Réalisation du prototype sous Proteus + programmation Arduino bouton/LED associée.</li>
-        <li><strong>AC 11.03</strong> — Schéma documenté avec cartouche.</li>
-        <li><strong>AC 12.03</strong> — Analyse en cascade des effets d'une défaillance.</li>
+        <li><strong>AC 11.01</strong> — Analyser le système avant de le câbler.</li>
+        <li><strong>AC 11.02</strong> — Faire un prototype Proteus + un test Arduino bouton/LED en parallèle.</li>
+        <li><strong>AC 11.03</strong> — Le schéma avec son cartouche, premier pas vers un vrai dossier de fabrication.</li>
+        <li><strong>AC 12.03</strong> — Réfléchir à ce qui se passe si un composant lâche.</li>
     </ul>
 </section>
 
@@ -75,25 +75,25 @@
     <h2 style="margin-bottom: 1rem;">SAÉ Info — Simulateur balistique</h2>
     <p style="color: var(--text-secondary);"><em>Janvier — Mars 2026 · Physique en binôme avec Samuel Nouis, code en solo</em></p>
 
-    <h4>Contexte</h4>
-    <p>L'objectif de la SAÉ Info était de développer un programme C++ permettant de simuler l'interception d'un projectile par un autre. Le projet comportait deux phases : une modélisation physique du problème (en binôme), puis l'implémentation logicielle (en solo).</p>
+    <h4>Le contexte</h4>
+    <p>Le but, c'était d'écrire un programme C++ qui simule l'interception d'un projectile par un autre. Le projet s'est fait en deux temps : d'abord la modélisation physique (en binôme), puis le code (j'ai géré ça tout seul).</p>
 
-    <h4>Modélisation physique</h4>
-    <p>Hypothèses simplificatrices : projectiles modélisés comme des points matériels, soumis uniquement à la pesanteur (g = 9,8 m·s<sup>−2</sup>), mouvement plan, frottements négligés. La condition d'interception (positions et instants identiques) conduit à une équation du second degré en tan(α<sub>i</sub>), qui peut être résolue analytiquement.</p>
+    <h4>La physique derrière</h4>
+    <p>On a simplifié : les projectiles sont des points matériels, soumis uniquement à la pesanteur (g = 9,8 m·s<sup>−2</sup>), pas de frottements, mouvement dans un plan. La condition d'interception donne une équation du second degré en tan(α<sub>i</sub>), qu'on peut résoudre directement.</p>
 
-    <h4>Implémentation C++</h4>
-    <p>Architecture modulaire (Code::Blocks) :</p>
+    <h4>Côté code</h4>
+    <p>J'ai découpé le projet en plusieurs fichiers (sous Code::Blocks), pour que chaque morceau ait son rôle bien défini :</p>
     <ul>
-        <li><code>main.cpp</code> — saisie utilisateur, orchestration générale</li>
-        <li><code>balistique.cpp</code> / <code>.h</code> — calculs physiques (trajectoires, résolution, vérification)</li>
-        <li><code>utilitaires.cpp</code> / <code>.h</code> — fonctions utilitaires (conversion degrés/radians, etc.)</li>
-        <li><code>test_balistique.cpp</code> — tests unitaires sur cas particuliers</li>
-        <li><code>README</code> — documentation, compilation, exemples</li>
+        <li><code>main.cpp</code> — la partie qui parle à l'utilisateur, demande les valeurs et orchestre le reste</li>
+        <li><code>balistique.cpp</code> / <code>.h</code> — tous les calculs physiques (trajectoires, résolution, vérification)</li>
+        <li><code>utilitaires.cpp</code> / <code>.h</code> — les petites fonctions utiles (conversion degrés/radians, etc.)</li>
+        <li><code>test_balistique.cpp</code> — des tests sur des cas particuliers pour vérifier que ça marche</li>
+        <li><code>README</code> — comment compiler et utiliser le programme</li>
     </ul>
 </section>
 
 <section class="content-block reveal" style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border);">
-    <h2 style="margin-bottom: 1rem;">Travaux pratiques</h2>
+    <h2 style="margin-bottom: 1rem;">Les TP, en gros</h2>
 
     <div class="projects-grid" style="margin-top: 1.5rem;">
 
