@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partager — Arthur Delais</title>
+    <meta name="description" content="Scannez le QR code pour accéder au portfolio d'Arthur Delais.">
+    <meta name="author" content="Arthur Delais">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        .qr-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 0 1rem;
+        }
+
+        .qr-display {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-dim);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 20px 60px -15px var(--accent-glow-strong);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-display::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, var(--accent-glow), transparent 70%);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .qr-display img {
+            display: block;
+            max-width: 100%;
+            width: 320px;
+            height: 320px;
+            border-radius: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-url {
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            color: var(--accent-bright);
+            background: var(--bg-secondary);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 1rem;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent-bright);
+            transform: translateY(-1px);
+        }
+
+        .copy-btn.copied {
+            background: var(--success);
+            color: var(--bg-primary);
+        }
+
+        .qr-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .usage-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px;
+            padding: 1.4rem 1.6rem;
+            transition: all 0.3s;
+        }
+
+        .usage-card:hover {
+            border-color: var(--accent-dim);
+            transform: translateY(-2px);
+        }
+
+        .usage-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .usage-title {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent-bright);
+            margin-bottom: 0.4rem;
+        }
+
+        .usage-desc {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 600px) {
+            .qr-display { padding: 1.5rem; }
+            .qr-display img { width: 260px; height: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="preloader"><div class="preloader-logo">[ A.D. ]</div></div>
+<canvas id="particles-canvas"></canvas>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">A.DELAIS / BUT-GEII</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="AC11-01.html">C1</a></li>
+            <li><a href="AC12-01.html">C2</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="stage.html">Stage</a></li>
+            <li><a href="glossaire.html">Glossaire</a></li>
+            <li><a href="partager.html" class="active">Partager</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container container-narrow">
+
+<section class="qr-hero">
+    <span class="hero-tag">Partage rapide</span>
+    <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); text-align: center; margin: 1rem 0;">Scannez pour accéder au portfolio</h1>
+    <p style="max-width: 560px; color: var(--text-secondary);">Pointez l'appareil photo de votre téléphone vers le QR code ci-dessous pour ouvrir mon portfolio directement.</p>
+
+    <div class="qr-display">
+        <img src="../assets/qr-portfolio-dark.png" alt="QR code menant au portfolio d'Arthur Delais" id="qrImage">
+    </div>
+
+    <div class="qr-url">
+        <span id="urlText">https://arthur424363.github.io/portfolio-but-geii/</span>
+        <button class="copy-btn" onclick="copyUrl()" id="copyBtn">📋 Copier</button>
+    </div>
+
+    <div class="qr-actions no-print">
+        <a href="../assets/qr-portfolio-dark.png" download="QR_Portfolio_Arthur_Delais.png" class="btn btn-primary">⬇ Télécharger (version sombre)</a>
+        <a href="../assets/qr-portfolio-light.png" download="QR_Portfolio_Arthur_Delais_NB.png" class="btn btn-ghost">⬇ Télécharger (noir & blanc pour impression)</a>
+        <button onclick="window.print()" class="btn btn-ghost">🖨 Imprimer</button>
+    </div>
+</section>
+
+<section class="content-block reveal">
+    <h3>💡 Comment l'utiliser</h3>
+    <div class="usage-grid">
+
+        <div class="usage-card">
+            <div class="usage-icon">📄</div>
+            <div class="usage-title">Sur ton CV papier</div>
+            <div class="usage-desc">Imprime le QR code en noir & blanc et colle-le sur ton CV. Le recruteur scanne et accède au portfolio détaillé.</div>
+        </div>
+
+        <div class="usage-card">
+            <div class="usage-icon">📧</div>
+            <div class="usage-title">Dans un email</div>
+            <div class="usage-desc">Joins l'image du QR code en signature d'email ou directement dans le corps du message.</div>
+        </div>
+
+        <div class="usage-card">
+            <div class="usage-icon">🤝</div>
+            <div class="usage-title">En forum entreprise</div>
+            <div class="usage-desc">Affiche cette page sur ton téléphone et laisse les recruteurs scanner. Plus rapide que de noter une URL.</div>
+        </div>
+
+        <div class="usage-card">
+            <div class="usage-icon">💬</div>
+            <div class="usage-title">Sur les réseaux</div>
+            <div class="usage-desc">Partage l'image sur LinkedIn, Instagram, ou en signature de profil. Visuel et pratique.</div>
+        </div>
+
+        <div class="usage-card">
+            <div class="usage-icon">🎓</div>
+            <div class="usage-title">Pour un prof / jury</div>
+            <div class="usage-desc">Lors d'une soutenance ou d'un entretien, le QR code permet d'accéder au portfolio sans taper l'URL.</div>
+        </div>
+
+        <div class="usage-card">
+            <div class="usage-icon">🏷️</div>
+            <div class="usage-title">Sur un badge ou sticker</div>
+            <div class="usage-desc">Imprime-le sur un sticker à coller sur ton ordinateur, ta carte de visite ou un porte-document.</div>
+        </div>
+
+    </div>
+</section>
+
+<section class="content-block reveal">
+    <h3>🔧 Astuce</h3>
+    <p style="color: var(--text-secondary);">Ce QR code intègre une <strong>correction d'erreur de niveau H (30%)</strong> : il reste lisible même si une partie est masquée par le logo "AD" au centre, ou si l'impression est imparfaite. Tu peux l'agrandir ou le réduire sans perdre la qualité (PNG haute définition 900×900 px).</p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 · Arthur Delais · Portfolio BUT GEII · IUT Jean Monnet · Saint-Étienne</p>
+</footer>
+
+<script>
+function copyUrl() {
+    const url = document.getElementById('urlText').textContent;
+    const btn = document.getElementById('copyBtn');
+    navigator.clipboard.writeText(url).then(() => {
+        btn.textContent = '✓ Copié !';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = '📋 Copier';
+            btn.classList.remove('copied');
+        }, 2000);
+    }).catch(() => {
+        // Fallback pour navigateurs anciens
+        const tmp = document.createElement('textarea');
+        tmp.value = url;
+        document.body.appendChild(tmp);
+        tmp.select();
+        document.execCommand('copy');
+        document.body.removeChild(tmp);
+        btn.textContent = '✓ Copié !';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = '📋 Copier';
+            btn.classList.remove('copied');
+        }, 2000);
+    });
+}
+</script>
+<script src="../assets/script.js"></script>
+</body>
+</html>
