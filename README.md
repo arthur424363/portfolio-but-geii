@@ -2,11 +2,67 @@
 
 Portfolio personnel de fin de 1ère année du BUT Génie Électrique et Informatique Industrielle, IUT Jean Monnet, Saint-Étienne (2025-2026).
 
+## 📎 Activer les preuves cliquables
+
+Sur chaque page de compétence (AC11-01 à AC12-03), la section **"Preuves associées"** affiche des liens vers tes vrais documents. Tant que tu n'as pas déposé les fichiers, ils apparaissent en pointillés avec l'icône ⏳ (à déposer).
+
+Pour les activer, dépose tes vrais fichiers dans `assets/preuves/` avec **exactement les noms suivants** :
+
+| Fichier à déposer | Source dans tes archives |
+|---|---|
+| `CR_TP5_ELEN_transistor_LED.docx` | Ton CR du TP5 ELEN |
+| `CR_TP1_ELEN2_TL081.docx` | Ton CR du TP1 ELEN2 |
+| `CR_TP3-TP7_ELEN2_Bode.pdf` | Tes CR des TP3 à TP7 ELEN2 (fusionnés en PDF) |
+| `CR_TP_physique_TP1_TP3.docx` | Tes CR de physique TP1 et TP3 |
+| `bode.xlsx` | Ton tableur Bode |
+| `balistique_main.cpp`, `balistique_balistique.cpp`, etc. | Code C++ du simulateur (1 fichier par module) |
+| `balistique_test.cpp` | Fichier de tests du simulateur |
+| `balistique_README.txt` | README du simulateur |
+| `Modelisation_Physique_Balistique.docx` | Document de modélisation en binôme |
+| `SEA_Robot_schema_proteus.pdsprj` | Le fichier projet Proteus de la carte commande moteur |
+| `Quartus_decodeur_7_segments.zip` | Le projet Quartus 7-segments zippé |
+
+Une fois déposés, les liens passent automatiquement en bleu cyan avec l'icône ↗ et deviennent ouvrables.
+
+Voir aussi `assets/preuves/README.txt` pour la liste complète.
+
+## ✨ Nouveautés v6
+
+- **Preuves cliquables** sur toutes les pages de compétences (18 liens)
+- **Page Partager** dédiée avec QR code stylé (cyan + logo "AD")
+- **QR code** versions sombre et N&B téléchargeables
+- **Bouton de copie d'URL** en un clic
+
+## Structure
+
+```
+portfolio-but-geii/
+├── index.html
+├── pages/
+│   ├── AC11-01.html ... AC12-03.html   # 6 pages compétences
+│   ├── projets.html                    # SAÉ + TP + Galerie TP énergie
+│   ├── cv.html                         # CV PDF intégré
+│   ├── stage.html                      # Espace stage BUT2
+│   ├── partager.html                   # QR code à partager
+│   └── apropos.html
+└── assets/
+    ├── style.css
+    ├── script.js                       # Étoiles 3D + interactions
+    ├── favicon.svg
+    ├── CV_Arthur_Delais.pdf
+    ├── qr-portfolio-dark.png           # QR cyan
+    ├── qr-portfolio-light.png          # QR N&B impression
+    ├── schemas/                        # Schémas Proteus, Arduino
+    ├── code/                           # Captures code
+    ├── photos/                         # Photos TP énergie
+    └── preuves/                        # ← À REMPLIR avec tes fichiers
+        └── README.txt
+```
+
 ## ✨ Nouveautés v2
 
 - **Page CV** imprimable en PDF (depuis le navigateur : Ctrl+P → Enregistrer en PDF)
 - **Page Stage** prête pour accueillir les infos du stage de BUT2
-- **Page Glossaire technique** (PWM, pont en H, AOP, FPGA, SAÉ, AC…)
 - **Bilan en chiffres** animé sur la page d'accueil
 - **Graphique radar** des compétences en SVG
 - **Particules animées** en fond, connectées à la souris
@@ -31,7 +87,6 @@ portfolio-but-geii/
 │   ├── projets.html            # SAÉ Robot, SAÉ Info, TPs
 │   ├── cv.html                 # CV imprimable (NOUVEAU)
 │   ├── stage.html              # Espace stage BUT2 (NOUVEAU)
-│   ├── glossaire.html          # Glossaire technique (NOUVEAU)
 │   └── apropos.html
 ├── assets/
 │   ├── style.css

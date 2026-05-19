@@ -94,46 +94,6 @@
             margin-top: 1.5rem;
         }
 
-        .usage-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.2rem;
-            margin-top: 2rem;
-        }
-
-        .usage-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--accent);
-            border-radius: 8px;
-            padding: 1.4rem 1.6rem;
-            transition: all 0.3s;
-        }
-
-        .usage-card:hover {
-            border-color: var(--accent-dim);
-            transform: translateY(-2px);
-        }
-
-        .usage-icon {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .usage-title {
-            font-family: var(--font-display);
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--accent-bright);
-            margin-bottom: 0.4rem;
-        }
-
-        .usage-desc {
-            color: var(--text-secondary);
-            font-size: 0.88rem;
-            line-height: 1.55;
-        }
-
         @media (max-width: 600px) {
             .qr-display { padding: 1.5rem; }
             .qr-display img { width: 260px; height: 260px; }
@@ -154,9 +114,7 @@
             <li><a href="AC11-01.html">C1</a></li>
             <li><a href="AC12-01.html">C2</a></li>
             <li><a href="cv.html">CV</a></li>
-            <li><a href="stage.html">Stage</a></li>
-            <li><a href="glossaire.html">Glossaire</a></li>
-            <li><a href="partager.html" class="active">Partager</a></li>
+            <li><a href="stage.html">Stage</a></li>            <li><a href="partager.html" class="active">Partager</a></li>
             <li><a href="apropos.html">À propos</a></li>
         </ul>
     </div>
@@ -183,54 +141,6 @@
         <a href="../assets/qr-portfolio-light.png" download="QR_Portfolio_Arthur_Delais_NB.png" class="btn btn-ghost">⬇ Télécharger (noir & blanc pour impression)</a>
         <button onclick="window.print()" class="btn btn-ghost">🖨 Imprimer</button>
     </div>
-</section>
-
-<section class="content-block reveal">
-    <h3>💡 Comment l'utiliser</h3>
-    <div class="usage-grid">
-
-        <div class="usage-card">
-            <div class="usage-icon">📄</div>
-            <div class="usage-title">Sur ton CV papier</div>
-            <div class="usage-desc">Imprime le QR code en noir & blanc et colle-le sur ton CV. Le recruteur scanne et accède au portfolio détaillé.</div>
-        </div>
-
-        <div class="usage-card">
-            <div class="usage-icon">📧</div>
-            <div class="usage-title">Dans un email</div>
-            <div class="usage-desc">Joins l'image du QR code en signature d'email ou directement dans le corps du message.</div>
-        </div>
-
-        <div class="usage-card">
-            <div class="usage-icon">🤝</div>
-            <div class="usage-title">En forum entreprise</div>
-            <div class="usage-desc">Affiche cette page sur ton téléphone et laisse les recruteurs scanner. Plus rapide que de noter une URL.</div>
-        </div>
-
-        <div class="usage-card">
-            <div class="usage-icon">💬</div>
-            <div class="usage-title">Sur les réseaux</div>
-            <div class="usage-desc">Partage l'image sur LinkedIn, Instagram, ou en signature de profil. Visuel et pratique.</div>
-        </div>
-
-        <div class="usage-card">
-            <div class="usage-icon">🎓</div>
-            <div class="usage-title">Pour un prof / jury</div>
-            <div class="usage-desc">Lors d'une soutenance ou d'un entretien, le QR code permet d'accéder au portfolio sans taper l'URL.</div>
-        </div>
-
-        <div class="usage-card">
-            <div class="usage-icon">🏷️</div>
-            <div class="usage-title">Sur un badge ou sticker</div>
-            <div class="usage-desc">Imprime-le sur un sticker à coller sur ton ordinateur, ta carte de visite ou un porte-document.</div>
-        </div>
-
-    </div>
-</section>
-
-<section class="content-block reveal">
-    <h3>🔧 Astuce</h3>
-    <p style="color: var(--text-secondary);">Ce QR code intègre une <strong>correction d'erreur de niveau H (30%)</strong> : il reste lisible même si une partie est masquée par le logo "AD" au centre, ou si l'impression est imparfaite. Tu peux l'agrandir ou le réduire sans perdre la qualité (PNG haute définition 900×900 px).</p>
 </section>
 
 </main>

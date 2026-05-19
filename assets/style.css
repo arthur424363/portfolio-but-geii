@@ -411,9 +411,49 @@ p { margin-bottom: 1rem; }
 .proof-caption { padding: 0.8rem 1.2rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim); border-top: 1px solid var(--border); background: var(--bg-secondary); }
 
 .proof-list { display: grid; gap: 0.6rem; margin-top: 1rem; }
-.proof-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); transition: all 0.2s; }
-.proof-item:hover { border-color: var(--accent-dim); background: var(--bg-card-hover); }
-.proof-item::before { content: '◈'; color: var(--accent); }
+.proof-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 1.1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+    text-decoration: none;
+    position: relative;
+}
+.proof-item:hover {
+    border-color: var(--accent-dim);
+    background: var(--bg-card-hover);
+    color: var(--accent-bright);
+    transform: translateX(4px);
+}
+.proof-item::before { content: '◈'; color: var(--accent); flex-shrink: 0; }
+.proof-item .ext-icon {
+    margin-left: auto;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+.proof-item:hover .ext-icon { color: var(--accent-bright); }
+
+/* État "fichier à déposer" — différencié visuellement */
+.proof-item.todo {
+    border-style: dashed;
+    opacity: 0.65;
+    cursor: help;
+}
+.proof-item.todo::before { content: '⏳'; }
+.proof-item.todo:hover {
+    transform: none;
+    border-color: var(--warning);
+    opacity: 0.85;
+}
+.proof-item.todo .ext-icon { color: var(--warning); }
 
 .ac-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
 .ac-nav a { flex: 1; padding: 1.2rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--text-secondary); transition: all 0.2s; font-family: var(--font-mono); font-size: 0.85rem; }
